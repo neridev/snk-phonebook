@@ -1,0 +1,14 @@
+<div id="<%= dom_id section %>" class="box">
+  <p class="title is-4">
+    <%= section.name %>
+  </p>
+
+  <% if section.departments.present? %>
+  <p class="is-5 mb-3">Zoznam odborov:</p>
+  <ul class="list">
+    <% section.departments.each do |department| %>
+      <li class="list-item"><%= link_to department.name, department %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>

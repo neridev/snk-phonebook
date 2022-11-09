@@ -1,0 +1,23 @@
+<tr>
+  <td>
+  <% if contact.pohlavie == 'žena' %>
+    <img src="<%= image_path 'user-female.svg' %>" width="40" height="40">
+  <% else %>
+    <img src="<%= image_path 'user-male.svg' %>" width="40" height="40">
+  <% end %>
+  </td>
+  <td>
+    <%= contact.titul_pred %>
+    <%= contact.priezvisko %>
+    <%= contact.meno %><% if contact.titul_za.present? %>, <%= contact.titul_za %><% end %>
+  </td>
+  <td>
+    <%= contact.klapka %>
+  </td>
+  <td>
+    <%= contact.department.try(:name) %> / <%= contact.department.try(:section).try(:name) %>
+  </td>
+  <td>
+    <%= link_to "Zobraziť detail", contact, class: "button is-info is-light" %>
+  </td>
+</tr>

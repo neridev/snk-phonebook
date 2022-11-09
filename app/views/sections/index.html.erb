@@ -1,0 +1,22 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-4 pb-5">Zoznam oddelení</h1>
+  </div>
+  <div class="column to-right">
+    <%= link_to "Pridať nové oddelenie", new_section_path, class: "button is-info" %>
+  </div>
+</div>
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Názov oddelenia</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| %>
+      <%= render "section_list", section: section %>
+    <% end %>
+  </tbody>
+</table>

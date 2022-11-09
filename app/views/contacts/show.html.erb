@@ -1,0 +1,15 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-4 pb-5">Detail kontaktu</h1>
+  </div>
+  <div class="column to-right">
+    <%= button_to "Vymazať kontakt", @contact, method: :delete,
+        onclick: "return confirm('Ste si isty? Tento krok sa nedá vrátiť späť!');",
+        class: "has-background-danger has-text-white"
+    %>
+    <%= link_to "Editovať kontakt", edit_contact_path(@contact), class: "button is-info ml-3" %>
+    <%= link_to "Späť na zoznam kontaktov", contacts_path, class: "button is-light ml-3" %>
+  </div>
+</div>
+
+<%= render @contact %>

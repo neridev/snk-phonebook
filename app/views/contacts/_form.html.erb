@@ -1,0 +1,93 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="columns">
+    <div class="column is-4">
+      
+      <div class="field">
+        <%= form.label :meno, "Meno", class: "label" %>
+        <div class="control">
+          <%= form.text_field :meno, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :priezvisko, "Priezvisko", class: "label" %>
+        <div class="control">
+          <%= form.text_field :priezvisko, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :titul_pred, "Titul pred menom", class: "label" %>
+        <div class="control">
+          <%= form.text_field :titul_pred, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :titul_za, "Titul za menom", class: "label" %>
+        <div class="control">
+          <%= form.text_field :titul_za, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :klapka, "Klapka", class: "label" %>
+        <div class="control">
+          <%= form.text_field :klapka, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :verejne_cislo, "Verejné číslo", class: "label" %>
+        <div class="control">
+          <%= form.text_field :verejne_cislo, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :sluzobny_mobil, "Služobný mobil", class: "label" %>
+        <div class="control">
+          <%= form.text_field :sluzobny_mobil, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :pohlavie, "Avatar", class: "label" %>
+        <div class="control">
+          <div class="select">
+            <%= form.select :pohlavie, ["muž", "žena"] %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :department_id, "Odbor", class: "label" %>
+        <div class="control">
+          <div class="select">
+            <%= form.select :department_id, Department.all.collect { |s| [ s.name+" ("+s.section.name+")", s.id ] } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control to-right">
+          <%= form.submit "Uložiť kontakt", class: "button is-info" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>

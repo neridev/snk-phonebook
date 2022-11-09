@@ -1,0 +1,9 @@
+<section class="container is-max-desktop my-6 has-text-centered">
+  <h1 class="title">Vyhľadávanie kontaktov</h1>
+
+  <%= form_tag('/search') do %>
+    <%= label_tag :search, 'Hľadajte v zozname kontaktov', class: "mb-3 is-block" %>
+    <%= text_field_tag :search, params[:search], class: 'input searchbox mb-3', placeholder: "Zadajte hľadaný reťazec", title: "Zadajte hľadaný reťazec" %>
+    <%= submit_tag "Hľadať", class: 'searchbox-button', title: "Tlačidlo hľadať" %>
+  <% end %>
+</section>

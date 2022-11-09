@@ -1,0 +1,10 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-4 pb-5">Pridať nový kontakt</h1>
+  </div>
+  <div class="column to-right">
+    <%= link_to "Späť na zoznam kontaktov", contacts_path, class: "button is-light" %>
+  </div>
+</div>
+
+<%= render "form", contact: @contact %>

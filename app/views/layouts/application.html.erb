@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <title>SNK - Zoznam kontaktov</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  $(".navbar-burger").click(function() {
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+  });
+});
+    </script>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <article>
+      <header>
+        <%= render 'partials/navbar' %>
+        <%= render 'partials/notice' %>
+      </header>
+      <main>
+        <section class="container">
+          <%= yield %>
+        </section>
+      </main>
+      <footer>
+        <div class="content has-text-centered">
+          <p>
+          &copy; <%= Date.today.year %> - Slovenská národná knižnica
+          </p>
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>

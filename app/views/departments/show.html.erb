@@ -1,0 +1,15 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-4 pb-5">Detail odboru</h1>
+  </div>
+  <div class="column to-right">
+    <%= button_to "Vymazať odbor", @department, method: :delete,
+        onclick: "return confirm('Ste si isty? Tento krok sa nedá vrátiť späť!');",
+        class: "has-background-danger has-text-white"
+    %>
+    <%= link_to "Editovať odbor", edit_department_path(@department), class: "button is-info ml-3" %>
+    <%= link_to "Späť na zoznam odborov", departments_path, class: "button is-light ml-3" %>
+  </div>
+</div>
+
+<%= render @department %>

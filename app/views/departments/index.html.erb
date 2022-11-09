@@ -1,0 +1,23 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-4 pb-5">Zoznam odborov</h1>
+  </div>
+  <div class="column to-right">
+    <%= link_to "Pridať nový odbor", new_department_path, class: "button is-info" %>
+  </div>
+</div>
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Názov odboru</th>
+      <th>Počet zamestnancov</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @departments.each do |department| %>
+      <%= render "department_list", department: department %>
+    <% end %>
+  </tbody>
+</table>

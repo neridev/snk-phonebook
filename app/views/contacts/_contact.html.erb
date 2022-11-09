@@ -1,0 +1,49 @@
+<div id="<%= dom_id contact %>" class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <% if contact.pohlavie == 'žena' %>
+            <img src="<%= image_path 'user-female.svg' %>" width="40" height="40">
+          <% else %>
+            <img src="<%= image_path 'user-male.svg' %>" width="40" height="40">
+          <% end %>
+        </figure>
+      </div>
+      <div class="media-content flex-vcenter">
+        <p class="title is-4">
+          <%= contact.titul_pred %>
+          <%= contact.priezvisko %>
+          <%= contact.meno %><% if contact.titul_za.present? %>, <%= contact.titul_za %><% end %>
+        </p>
+      </div>
+    </div>
+
+    <div class="content columns">
+      <div class="column">
+        <p>
+          <strong>Klapka:</strong>
+          <%= contact.klapka %>
+        </p>
+        <p>
+          <strong>Verejné číslo:</strong>
+          <%= contact.verejne_cislo %>
+        </p>
+        <p>
+          <strong>Služobný mobil:</strong>
+          <%= contact.sluzobny_mobil %>
+        </p>
+      </div>
+      <div class="column">
+        <p>
+          <strong>Oddelenie:</strong>
+          <%= contact.department.section.name %>
+        </p>
+        <p>
+          <strong>Odbor:</strong>
+          <%= contact.department.name %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

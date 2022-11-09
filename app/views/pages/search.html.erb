@@ -1,0 +1,24 @@
+<section class="container is-max-desktop my-6">
+  <h1 class="title has-text-centered">Výsledky vyhľadávania</h1>
+
+  <section class="box has-text-centered">
+
+    <% if @message.present? %>
+      <p class="subtitle mb-4"><%= @message %></p>
+    <% end %>
+
+    <% if @results.empty? %>
+      <p class="subtitle">Nenašlo sa nič.</p>
+    <% end %>
+
+    <ul class="search">
+      <% @results.each do |contact| %>
+        <li class="mb-1">
+          <%= link_to "#{contact.titul_pred + ' ' + contact.priezvisko + ' ' + contact.meno + ' ' + contact.titul_za}", contact_path(contact) %>
+        </li>
+      <% end %>
+    </ul>
+
+  </section>
+
+</section>

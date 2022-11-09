@@ -1,0 +1,16 @@
+<div id="<%= dom_id department %>" class="box">
+  <p class="title is-4">
+    <%= department.name %> (<%= department.section.name %>)
+  </p>
+
+  <% if department.contacts.present? %>
+  <p class="is-5 mb-3">Počet zamestnancov: <%= department.contacts.count %></p>
+  <ul class="list">
+    <% department.contacts.order(priezvisko: :asc).each do |contact| %>
+      <li class="list-item">
+        <%= link_to contact.titul_pred + ' ' + contact.priezvisko + ' ' + contact.meno + ' ' + contact.titul_za, contact %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
