@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   #get 'pages/home'
   #get 'pages/about'
 
-  resources :contacts
+  resources :contacts do
+    collection { post :import }
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 end

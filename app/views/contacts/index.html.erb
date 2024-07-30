@@ -4,6 +4,11 @@
   </div>
   <div class="column to-right">
     <%= link_to "Pridať nový kontakt", new_contact_path, class: "button is-info" %>
+    <%= link_to 'Export do CSV', contacts_path(format: :csv), class: "button is-warning ml-2" %>
+    <%= form_with(url: import_contacts_path, local: true, method: :post, html: { multipart: true }, class: "button is-warning ml-2") do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV", class: "button is-primary is-light" %>
+    <% end %>
   </div>
 </div>
 
